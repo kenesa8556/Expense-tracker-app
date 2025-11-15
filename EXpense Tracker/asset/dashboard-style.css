@@ -1,0 +1,873 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #b8b4b46c;
+}
+header{
+    position: fixed;
+    padding: 20px 50px 15px ;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.2);
+    top: 0;
+    background-color: #ffffff2c;
+    backdrop-filter: blur(30px);
+    justify-content: space-between;
+}
+header h1{
+    font-size: 25px;
+    font-family: monospace;
+}
+header h1 span{
+    color:#173242;
+    font-size: 30px;
+}
+header h1 i{
+    margin-right: 13px;
+    background-color: #173242;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+.side{
+    position: fixed;
+    min-height: 60vh;
+    top: 14vh;
+    left: 50px;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.8);
+    z-index: 10;
+    background-color: #17324288;
+    width: 20%;
+    border-radius: 15px;
+    backdrop-filter: blur(100px);
+    display: none;
+    transition: 10s ease-in-out;
+}
+.side.active{
+    display: block;
+}
+#bar:hover{
+    cursor: pointer;
+    background-color: #005fa3;
+}
+.side i {
+    margin: 30px 20px;
+    font-size: 30px;
+}
+.side i:hover{
+    color: #005fa3;
+    cursor: pointer;
+}
+.side ul{
+    padding: 50px;
+    text-align: center;
+    height: 100%;
+    list-style: none;
+}
+.side ul li{
+    background-color: #173242;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 15px;
+}
+.side ul li:hover{
+    cursor: pointer;
+    background-color: #005fa3;
+
+}
+header h2{
+    position: absolute;
+    right: 25vh;
+    top: 40px;
+    font-size: 20px;
+    font-family: monospace;
+    color: #173242;
+    
+}
+header h2 span{
+    color: #000;
+    font-size: 16px;
+    font-family: cursive;
+}
+header button{
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    background: #173242;
+    font-size: 16px;
+    border-radius: 10px;
+    color: #fff;
+}
+#summary{
+    width: 60%;
+    position: absolute;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+    right: 30px;
+    border-radius: 15px;
+
+    margin-top: 70px;
+    display: flex;
+    padding: 30px;
+}
+#summary h2{
+    margin: 15px;
+    font-size: 25px;
+    font-family: monospace;
+    color: #173242;
+}
+#summary p{
+    margin-left: 50px;
+    text-align: center;
+    padding: 13px;
+    border-radius: 30px;
+    font-size: 15px;
+    color: #fff;
+
+
+}
+#summary p i{
+    font-size: 21px;
+    font-family: sans-serif;
+    color: #ffffff57;
+}
+#summary p span{
+color: #173242;
+font-size: 25px;
+font-family: cursive;
+}
+#summary p:first-of-type {
+    background: rgb(67, 158, 67);
+    
+}
+#summary p:nth-of-type(2) {
+    background: rgb(226, 50, 50);
+    
+}
+#summary p:nth-of-type(3) {
+    background: rgb(54, 114, 243);
+    
+}
+#expenseformsection{
+    max-width: 30%;
+    margin: 25px;
+    position: relative;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+    display: flex;
+    border-radius: 15px;
+    left: 35px;
+    top: 11vh;
+    flex-direction: column;
+    padding: 20px;
+}
+#expenseformsection h2{
+    text-align: center;
+    font-size: 30px;
+    font-family:monospace;
+    color: #173242;
+
+
+}
+#expenseform{
+    display:flex ;
+    flex-direction: column;
+}
+#expenseform input,#expenseform select{
+    width: 100%;
+    margin-top: 20px;
+}
+#expenseform select{
+    outline: none;
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #ffffffe3;
+    border-top:none ;
+    padding: 10px;
+    height: 40px;
+
+
+}
+.content{
+    display: none;
+}
+.content.active{
+    display: block;
+}
+#expenseform input{
+    height: 40px;
+    border-top:none ;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid #ffffffe3;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+}
+#expenseform input::placeholder{
+    font-size: 18px;
+    font-family: monospace;
+}
+
+#expenseform button{
+    padding: 15px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: #173242;
+    color: #fff;
+    font-family: cursive;
+}
+#transactions {
+    position: absolute;
+    top: 44vh;
+    z-index: 8;
+    left:  80vh;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+    padding: 20px 40px 50px;
+    border-radius: 15px;
+    max-height: 48vh;
+}
+#transactions p{
+    width: 300px;
+    font-family: sans-serif;
+    color: red;
+    font-size: 14px;
+}
+#transactions h2 {
+    font-family: monospace;
+    color: #173242;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+#transactions ul{
+    padding: 10px;
+    list-style:square;
+    font-family: cursive;
+    color: #173242c9;
+}
+#transactions ul li{
+    margin-bottom: 5px;
+}
+    .chart-container {
+        position: absolute;
+        right: 40px;
+        border-radius: 30px;
+        top: 38vh;
+        padding: 10px  15px 20px;
+        width: 400px;
+        height: 400px;
+        margin: 20px auto; /* Center the chart */
+        border-radius: 8px;
+    }
+
+    
+    #aiPlan {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 200px auto;
+  max-width: 600px;
+  box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+#aiPlan h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#generatePlanBtn {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 20px;
+  background-color: #173242;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#generatePlanBtn:hover {
+  background-color: #005fa3;
+}
+
+#planOutput {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 0.95rem;
+  color: #444;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  transition: opacity 0.6s ease-in;
+}
+.saving{
+    border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 200px auto 50px;
+  max-width: 600px;
+  box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+.saving label{
+    font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.saving button{
+    display: block;
+  margin: 15px auto 20px;
+  padding: 10px 20px;
+  background-color: #173242;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.saving input{
+    height: 40px;
+    border-top:none ;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid #ffffffe3;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+}
+.saving input::placeholder{
+    font-size: 18px;
+    font-family: monospace;
+}
+.progressContainer {
+  margin-top: 20px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+.div{
+    border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 50px auto;
+  max-width: 600px;
+  box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Toggle switch styling */
+.dark-mode-switch {
+    position: absolute;
+    top: 30px;
+    right: 400px;
+    z-index: 2000;
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background: #ddd;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    font-size: 18px;
+}
+
+.switch .sun,
+.switch .moon {
+    pointer-events: none;
+}
+
+.switch .ball {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+#dark-toggle {
+    display: none;
+}
+
+#dark-toggle:checked + .switch {
+    background: #333;
+}
+
+#dark-toggle:checked + .switch .ball {
+    transform: translateX(30px);
+}
+
+/* Switch changes color in dark mode */
+body.dark-mode .switch {
+    background: #333;
+}
+
+
+
+
+
+
+
+/* Dar -mode css */
+
+/* ================================
+   DARK MODE THEME
+   Triggered by: body.dark-mode
+================================ */
+
+body.dark-mode {
+    background-color: #0e0e0e !important;
+    color: #e6e6e6 !important;
+}
+
+
+
+/* HEADER */
+body.dark-mode header {
+    background-color: rgba(20,20,20,0.8) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+body.dark-mode header h1 {
+    color: #e6e6e6;
+}
+
+body.dark-mode header h1 span {
+    color: #4fa3ff;
+}
+
+body.dark-mode header h1 i {
+    background-color: #4fa3ff;
+    color: black;
+}
+
+body.dark-mode header h2 {
+    color: #e6e6e6;
+}
+
+body.dark-mode header h2 span {
+    color: #bbbbbb;
+}
+
+body.dark-mode header button {
+    background: #4fa3ff;
+    color: black;
+}
+
+
+
+/* SIDEBAR */
+body.dark-mode .side {
+    background-color: rgba(25,25,25,0.9);
+    box-shadow: 0 0 30px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .side ul li {
+    background-color: #1b4a63;
+}
+
+body.dark-mode .side ul li:hover {
+    background-color: #4fa3ff;
+    color: black;
+}
+
+body.dark-mode .side i {
+    color: #ddd;
+}
+
+body.dark-mode .side i:hover {
+    color: #4fa3ff;
+}
+
+
+
+/* SUMMARY CARDS */
+body.dark-mode #summary {
+    background-color: #1a1a1a;
+    box-shadow: 0 0 30px rgba(255,255,255,0.05);
+}
+
+body.dark-mode #summary h2 {
+    color: #4fa3ff;
+}
+
+body.dark-mode #summary p span {
+    color: #ffffff;
+}
+
+body.dark-mode #summary p i {
+    color: #aaaaaa;
+}
+
+
+
+/* EXPENSE FORM */
+body.dark-mode #expenseformsection {
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(255,255,255,0.08);
+}
+
+body.dark-mode #expenseformsection h2 {
+    color: #4fa3ff;
+}
+
+body.dark-mode #expenseform input,
+body.dark-mode #expenseform select {
+    color: #9b9797;
+    border-bottom: 3px solid #4fa3ff;
+}
+
+body.dark-mode #expenseform input::placeholder {
+    color: #bbbbbb;
+}
+
+body.dark-mode #expenseform button {
+    background-color: #4fa3ff;
+    color: black;
+}
+
+
+
+/* TRANSACTIONS */
+body.dark-mode #transactions {
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(255,255,255,0.08);
+}
+
+body.dark-mode #transactions h2 {
+    color: #4fa3ff;
+}
+
+body.dark-mode #transactions p {
+    color: #ff6b6b;
+}
+
+body.dark-mode #transactions ul {
+    color: #ddd;
+}
+
+
+
+/* CHART CONTAINER */
+body.dark-mode .chart-container {
+    background-color: #111;
+    box-shadow: 0 0 30px rgba(255,255,255,0.06);
+}
+
+
+
+/* AI PLAN SECTION */
+body.dark-mode #aiPlan {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark-mode #aiPlan h2 {
+    color: #4fa3ff;
+}
+
+body.dark-mode #generatePlanBtn {
+    background-color: #4fa3ff;
+    color: black;
+}
+
+body.dark-mode #planOutput {
+    background-color: #111;
+    color: #f0f0f0;
+}
+
+
+
+/* SAVING GOAL SECTION */
+body.dark-mode .saving {
+    background-color: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode .saving label {
+    color: #4fa3ff;
+}
+
+body.dark-mode .saving input {
+    border-bottom: 3px solid #4fa3ff;
+    color: #fff;
+}
+
+body.dark-mode .saving button {
+    background-color: #4fa3ff;
+    color: black;
+}
+
+body.dark-mode .saving input::placeholder {
+    color: #ccc;
+}
+
+/* SAVINGS PROGRESS */
+body.dark-mode .div {
+    background-color: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode .progressBar {
+    background-color: #333;
+}
+
+body.dark-mode .progressFill {
+    background-color: #4fa3ff !important;
+}
+
+
+
+/* DARK MODE SWITCH */
+body.dark-mode .switch {
+    background: #444;
+}
+
+body.dark-mode #dark-toggle:checked + .switch {
+    background: #4fa3ff;
+}
+
+body.dark-mode .switch .ball {
+    background: white;
+}
+
+
+/* ---------------------------- */
+/*        RESPONSIVE MODE       */
+/* ---------------------------- */
+
+/* ---------- TABLET (max 1024px) ---------- */
+@media (max-width: 1024px) {
+
+    header {
+        padding: 15px 30px;
+    }
+
+    .side {
+        width: 35%;
+        left: 20px;
+    }
+
+    #summary {
+        width: 85%;
+        right: 0;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #summary p {
+        width: 30%;
+        margin-left: 0;
+    }
+
+    #expenseformsection {
+        max-width: 60%;
+        left: 20px;
+    }
+
+    #transactions {
+        left: auto;
+        right: 20px;
+        top: 55vh;
+    }
+
+    .chart-container {
+        width: 300px;
+        height: 300px;
+        right: 20px;
+    }
+}
+
+
+/* ---------- MOBILE (max 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 18px;
+        max-width: 200px;
+    }
+
+    header h2 {
+        display: none; /* Too small for mobile */
+    }
+
+    .dark-mode-switch {
+        right: 150px;
+        top: 22px;
+    }
+
+    /* SIDEBAR → FULL WIDTH SLIDE */
+    .side {
+        width: 75%;
+        left: -100%;
+        transition: left 0.4s ease;
+    }
+
+    .side.active {
+        left: 0;
+    }
+
+    /* SUMMARY */
+    #summary {
+        width: 92%;
+        position: relative;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #summary p {
+        width: 100%;
+    }
+
+    /* FORM */
+    #expenseformsection {
+        max-width: 90%;
+        left: 0;
+        margin: 80px auto;
+    }
+
+    /* TRANSACTIONS */
+    #transactions {
+        position: relative;
+        top: 20px;
+        left: 0;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    /* CHART */
+    .chart-container {
+        position: relative;
+        margin: 20px auto;
+        width: 95%;
+        height: 300px;
+        right: 0;
+        top: 0;
+    }
+
+    /* AI PLAN + SAVING */
+    #aiPlan,
+    .saving,
+    .div {
+        max-width: 90%;
+        margin: 100px auto;
+    }
+}
+
+
+/* ---------- SMALL MOBILE (max 480px) ---------- */
+@media (max-width: 480px){
+    header h1 {
+        font-size: 18px;
+    }
+
+    .switch {
+        width: 50px;
+        height: 26px;
+    }
+
+    .switch .ball {
+        width: 22px;
+        height: 22px;
+    }
+
+    #summary h2 {
+        font-size: 20px;
+    }
+
+    #expenseformsection h2 {
+        font-size: 24px;
+    }
+    #expenseformsection{
+        margin: 100px auto;
+        
+    }
+
+    #transactions h2 {
+        font-size: 22px;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    

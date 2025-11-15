@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1><i id="bar" class="fa-solid fa-bars"></i><span>Expense</span> tracker Dashboard</h1>
+        <div class="dark-mode-switch">
+    <input type="checkbox" id="dark-toggle">
+    <label for="dark-toggle" class="switch">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+        <span class="ball"></span>
+    </label>
+</div>
+
+
+        <h2>Welcome : <span id="customer"></span></h2>
+        <button id="logoutBtn">Log out</button>
+
+    </header>
+    <div class="side">
+        <i class="fa-solid fa-xmark"></i>
+        <ul>
+            <li data-target="page1">Main Dashboard</li>
+            <li data-target="page2">Ai Expense Reduser</li>
+            <li data-target="page3">SavingGoal</li>
+        </ul>
+    </div>
+    <div id="page1" class="content active">
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Total incomes <br> <i>$</i> <span id="totalincome">0</span></p>
+            <p>Total Expenses <br><i>$</i> <span id="totalexpenses">0</span></p>
+            <p>Savings <br><i>$</i> <span id="savings">0</span></p>
+        </section>
+        <section id="expenseformsection">
+            <h2>Add <br>Transaction</h2>
+            <form action="" id="expenseform">
+                <input  type="number" name="amount" placeholder="Amount" required>
+                <select name="category">
+                    <option value="Food">Food</option>
+                    <option value="Rent">Rent</option>
+                    <option value="salary">salary</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="date" name="date" required>
+                <input type="text" name="notes" placeholder="Notes">
+                <select name="type">
+                    <option value="income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <button type="submit">ADD</button>
+            </form>
+    
+    
+        </section>
+        <section id="transactions">
+            <h2>Recent Transactions</h2>
+            <p id="top-spending"></p>
+            <ul id="transactionList"></ul>
+        </section>
+    
+        
+            <div class="chart-container">
+                <canvas id="expenseChart" width="400" height="400"></canvas>
+            </div>
+    </div>
+<div id="page2" class="content">
+
+    <section id="aiPlan">
+  <h2>AI Expense Reducer Plan</h2>
+  
+  <button id="generatePlanBtn">Generate Plan</button>
+  <div id="planOutput">Your personalized plan will appear here.</div>
+</section>
+
+</div>
+<div id="page3" class="content">
+    <div class="saving">
+        <label for="savingsGoal">Enter or Edit Monthly Savings Goal ($):</label>
+    <input type="number" id="savingsGoal" placeholder="Enter or Edit your saving Goal" />
+    <button id="sav">Submit</button>
+    </div>
+    <div class="div">
+        <p class="savingout">0</p>
+        <div class="progressContainer">
+            <label>Savings Goal Progress</label>
+            <div class="progressBar">
+                <div class="progressFill" id="progressFill"></div>
+            </div>
+            <p id="progressText"></p>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+
+
+    <script src="js/ap.js"></script>
+</body>
+</html>

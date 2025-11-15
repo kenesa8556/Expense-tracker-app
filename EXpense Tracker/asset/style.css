@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #b8b4b46c;
+    background-attachment:fixed;
+
+}
+
+.container{
+    margin: 100px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 10px 20px 80px rgba(0,0,0,0.5);
+
+}
+.container #form form{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.container #form h1{
+    font-size: 30px;
+    padding-top: 25px;
+    color: #173242;
+    text-align: center;
+    font-family: cursive;
+}
+.container #form form input{
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-bottom: 3px solid #fff;
+    border-top:  none;
+    border-left:  none;
+    border-right:  none;
+
+    outline: none;
+    padding: 15px;
+    
+}
+.container #form form p{
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+}
+.container #form form p a{
+    font-size: 18px;
+}
+.registeration{
+    display: none;
+}
+.loginform{
+    display: none;
+}
+.registeration.active{
+    display: block;
+}
+.loginform.active{
+    display: block;
+}
+.container #form form input[placeholder]{
+    font-size: 18px;
+    font-family: cursive;
+}
+.container #form form button{
+    padding: 10px;
+    color: #fff;
+    background-color: #173242;
+    border:none;
+    font-size: 15px;
+    font-family: cursive;
+    font-weight: bold;
+    outline: none;
+    margin-top: 30px;
+    border-radius: 60px;
+}
+
+
+/* -----------------------------------------
+DARK MODE (Toggle with: body.dark-mode)
+-----------------------------------------*/
+body.dark-mode {
+    background: #121212;
+    color: #eaeaea;
+}
+
+body.dark-mode .container {
+    box-shadow: 10px 20px 80px rgba(255,255,255,0.08);
+    background: #1e1e1e;
+}
+
+body.dark-mode #form h1 {
+    color: #eaeaea;
+}
+
+body.dark-mode #form form input {
+    color: #fff;
+    border-bottom: 3px solid #888;
+}
+
+body.dark-mode #form form input::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode #form form p {
+    color: #ddd;
+}
+
+body.dark-mode #form form p a {
+    color: #9bc9ff;
+}
+
+body.dark-mode #form form button {
+    background: #0d2535;
+    color: white;
+}
+
+
+
